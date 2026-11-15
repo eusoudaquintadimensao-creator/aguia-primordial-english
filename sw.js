@@ -1,5 +1,5 @@
-var V='aguia-ape-v3-2026-11-15-ia';
-var A=['./','index.html','style.css','app.js','img/hero.webp','img/hero-m.webp','img/aguia-olhar.webp','img/aguia-asas.webp','img/mira.webp','img/miami-gps.webp','ia/','ia/index.html','ia/ia.css','ia/ia.js','ia/kb.json','ia/img/aguia.webp','feed/','feed/index.html','feed/feed.css','feed/feed.js','feed/data/palavras.json'];
+var V='aguia-ape-v2-2026-11-15-feed';
+var A=['./','index.html','style.css','app.js','img/hero.webp','img/hero-m.webp','img/aguia-olhar.webp','img/aguia-asas.webp','img/mira.webp','img/miami-gps.webp','feed/','feed/index.html','feed/feed.css','feed/feed.js','feed/data/palavras.json'];
 self.addEventListener('install',function(e){e.waitUntil(caches.open(V).then(function(c){return c.addAll(A)}).then(function(){return self.skipWaiting()}))});
 self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(k){return Promise.all(k.filter(function(n){return n.indexOf('aguia-ape-')===0&&n!==V}).map(function(n){return caches.delete(n)}))}).then(function(){return self.clients.claim()}))});
 self.addEventListener('fetch',function(e){var u=new URL(e.request.url);if(e.request.method!=='GET'||u.origin!==location.origin)return;
