@@ -27,7 +27,7 @@ O app não tem uma foto fixa por palavra: ele **adivinha na hora**, pelo resumo 
 
 ## 4. O que foi corrigido no feed novo
 - **40 imagens realistas em HD geradas** (1080×1920) para os primeiros cartões do feed e palavras sem foto boa (major, cheese, rest stop, iceberg, strawberry, chandelier, refrigerator…).
-- **345 fotos trocadas** por fotos livres do Commons (≥ 1000×700) conferidas pela IA de visão.
+- **771 fotos trocadas** por fotos livres do Commons (≥ 1000×700) conferidas pela IA de visão.
 - **382 fotos erradas removidas**: o cartão mostra a palavra grande com emoji em vez de uma foto de outro assunto.
 - Miniatura do tamanho da tela (500/960/1280/1920 px), nunca o original de vários MB; crédito e licença em cada foto.
 - Frases de exemplo corrigidas nos cartões que estavam erradas ("This is a major." → "It is in C major.", "I rot." → "Fruit can rot.", sentimentos → "I feel …").
