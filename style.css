@@ -139,3 +139,19 @@ h3{margin:0 0 6px;font-size:1.1rem}
 .rodape .peq{font-size:.82rem}
 .aviso{position:fixed;left:50%;bottom:calc(20px + var(--sab));transform:translateX(-50%);background:#000;color:#fff;padding:10px 16px;border-radius:12px;box-shadow:0 0 0 1px var(--ciano);z-index:50;font-weight:700}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.ia-destaque{position:relative;display:flex;align-items:center;gap:18px;max-width:1080px;margin:28px auto 0;padding:18px 20px;border-radius:26px;text-decoration:none;color:#eaf6ff;overflow:hidden;background:radial-gradient(120% 140% at 0% 50%,rgba(41,240,255,.18),transparent 55%),radial-gradient(80% 120% at 100% 0%,rgba(140,60,255,.25),transparent 60%),#05081a;box-shadow:0 0 0 1px rgba(41,240,255,.45),0 0 40px rgba(41,240,255,.22)}
+@media (max-width:1120px){.ia-destaque{margin:24px 16px 0}}
+.ia-destaque::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(41,240,255,.05) 0 1px,transparent 1px 4px);pointer-events:none}
+.ia-ave{position:relative;flex:0 0 auto;width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,rgba(41,240,255,.25),transparent 70%)}
+.ia-ave img{width:104px;height:104px;object-fit:contain;animation:iaResp 5s ease-in-out infinite;filter:drop-shadow(0 0 14px rgba(41,240,255,.55))}
+.ia-ave i{position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(255,210,63,.55);border-left-color:transparent;border-right-color:transparent;animation:iaGira 7s linear infinite}
+@keyframes iaResp{50%{transform:scale(1.05)}}@keyframes iaGira{to{transform:rotate(360deg)}}
+.ia-txt{display:flex;flex-direction:column;gap:4px;min-width:0}
+.ia-txt small{font-size:11px;letter-spacing:.2em;color:#29f0ff;font-weight:800}
+.ia-txt>b{font:700 clamp(1.3rem,4.6vw,1.9rem)/1.1 Fraunces,Georgia,serif}
+.ia-txt>span{font-size:14.5px;color:rgba(234,246,255,.82)}
+.ia-txt em{font-style:normal;font-weight:800;color:#ffd23f;margin-top:4px}
+.nav-ia{color:#29f0ff!important;font-weight:800}
+@media (max-width:520px){.ia-destaque{flex-direction:column;text-align:center}.ia-txt{align-items:center}}
+@media (prefers-reduced-motion:reduce){.ia-ave img,.ia-ave i{animation:none}}
