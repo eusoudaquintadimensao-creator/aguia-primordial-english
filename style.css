@@ -155,3 +155,19 @@ h3{margin:0 0 6px;font-size:1.1rem}
 .nav-ia{color:#29f0ff!important;font-weight:800}
 @media (max-width:520px){.ia-destaque{flex-direction:column;text-align:center}.ia-txt{align-items:center}}
 @media (prefers-reduced-motion:reduce){.ia-ave img,.ia-ave i{animation:none}}
+
+/* memorial Marguerite Porete */
+.mp-destaque{position:relative;display:flex;align-items:stretch;gap:0;max-width:1080px;margin:18px auto 0;border-radius:26px;text-decoration:none;color:#f6ece2;overflow:hidden;background:#0b0508;box-shadow:0 0 0 1px rgba(255,160,90,.45),0 0 40px rgba(255,110,40,.2)}
+@media (max-width:1120px){.mp-destaque{margin:18px 16px 0}}
+.mp-img{position:relative;flex:0 0 42%;min-height:220px;overflow:hidden}
+.mp-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 40%;transition:transform 6s ease}
+.mp-destaque:hover .mp-img img{transform:scale(1.06)}
+.mp-img i{position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,#0b0508),radial-gradient(40% 40% at 70% 80%,rgba(255,120,40,.35),transparent 70%);animation:mpFogo 3s ease-in-out infinite}
+@keyframes mpFogo{50%{opacity:.75}}
+.mp-txt{display:flex;flex-direction:column;gap:6px;padding:20px 22px;justify-content:center}
+.mp-txt small{font:700 11.5px/1.3 ui-monospace,Menlo,monospace;letter-spacing:.18em;color:#ffb36b}
+.mp-txt b{font:italic 700 clamp(22px,2.6vw,30px)/1.15 Fraunces,Georgia,serif;color:#fff1de}
+.mp-txt span{color:#cdbfb3;font-size:15px;line-height:1.5}
+.mp-txt em{font-style:normal;font-weight:800;color:#1a0900;background:linear-gradient(135deg,#ffd9a0,#ff8a3d);align-self:flex-start;padding:9px 15px;border-radius:999px;margin-top:6px;box-shadow:0 6px 24px rgba(255,120,40,.4)}
+@media (max-width:620px){.mp-destaque{flex-direction:column}.mp-img{flex:none;height:200px;min-height:0}.mp-img i{background:linear-gradient(180deg,transparent 50%,#0b0508)}}
+.nav-mp{color:#ffb36b!important;font-weight:800}
