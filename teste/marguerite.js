@@ -22,6 +22,7 @@ await p.evaluate(()=>MP.parar());
 // inglês
 await p.evaluate(()=>MP.setL('en'));await p.evaluate(()=>scrollTo(0,0));await S(800);await p.screenshot({path:`../prints/mp-${TAG}-m-heroi-en.png`});
 R.en=await p.evaluate(()=>getComputedStyle(document.querySelector('h1+.sub .en')).display!=='none'&&document.documentElement.lang==='en');
+await p.evaluate(()=>{document.getElementById('voz').scrollIntoView();MP.tocar('monologo',false)});await S(5000);R.enAudio=await p.evaluate(()=>MP.estado());await p.screenshot({path:`../prints/mp-${TAG}-m-audio-en.png`});await p.evaluate(()=>MP.parar());R.enOk=R.enAudio.tempos&&!R.enAudio.sintese&&R.enAudio.ultimo>3;
 await p.evaluate(()=>MP.setL('pt'));
 // vela
 R.vela0=await p.evaluate(()=>+document.getElementById('n-velas').textContent);
@@ -49,5 +50,5 @@ await p.setOfflineMode(false);
 await p.goto(BASE,{waitUntil:'networkidle0'});R.home=await p.evaluate(()=>({card:!!document.querySelector('a.mp-destaque[href="marguerite/"]'),menu:!!document.querySelector('.nav a[href="marguerite/"]')}));
 await p.evaluate(()=>document.querySelector('.mp-destaque').scrollIntoView({block:'center'}));await S(800);await p.screenshot({path:`../prints/mp-${TAG}-home-card-d.png`});
 await p.setViewport({width:390,height:844,deviceScaleFactor:2,isMobile:true,hasTouch:true});await p.goto(BASE,{waitUntil:'networkidle0'});await p.evaluate(()=>document.querySelector('.mp-destaque').scrollIntoView({block:'center'}));await S(800);await p.screenshot({path:`../prints/mp-${TAG}-home-card-m.png`});
-const ok=R.overflow<=1&&R.sync&&R.coerencia.dif<=2&&R.en&&R.vela1.n===R.vela0+1&&R.off.ok&&R.home.card&&R.home.menu&&!erros.length;
+const ok=R.enOk&&R.overflow<=1&&R.sync&&R.coerencia.dif<=2&&R.en&&R.vela1.n===R.vela0+1&&R.off.ok&&R.home.card&&R.home.menu&&!erros.length;
 console.log(JSON.stringify({R,erros},null,1));console.log(ok?'PASS':'FAIL');await b.close()})();
